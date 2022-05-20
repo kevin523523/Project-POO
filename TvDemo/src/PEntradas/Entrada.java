@@ -16,11 +16,12 @@ public class Entrada {
   // Constructors
   //
   //Herrera improvement public Entrada () { };
+  //Erik Isaias Ortiz Duarte
   public Entrada() {
     }
 
     ;
-    
+    //Erik Isaias Ortiz Duarte
     public Entrada(Tv tv) {
         this.tv = tv;
     }
@@ -34,6 +35,7 @@ public class Entrada {
     //
     // Other methods
     //
+  //Erik Isaias Ortiz Duarte
     public abstract void execute();
 
 }
