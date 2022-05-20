@@ -16,18 +16,24 @@ public class Entrada {
   // Constructors
   //
   //Herrera improvement public Entrada () { };
-  
-  //
-  // Methods
-  //
+  public Entrada() {
+    }
 
+    ;
+    
+    public Entrada(Tv tv) {
+        this.tv = tv;
+    }
 
-  //
-  // Accessor methods
-  //
-
-  //
-  // Other methods
-  //
+    //
+    // Methods
+    //
+    //
+    // Accessor methods
+    //
+    //
+    // Other methods
+    //
+    public abstract void execute();
 
 }
