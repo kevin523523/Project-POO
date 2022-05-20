@@ -17,7 +17,10 @@ public class Resolucion {
   //
   // Constructors
   //
-  //Herrera improvement public Resolucion () { };
+  public Resolucion(double largo, double ancho){
+      this.largo=largo;
+      this.ancho=ancho;   
+  }
   
   //
   // Methods
