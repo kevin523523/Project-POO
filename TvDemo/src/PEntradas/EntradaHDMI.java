@@ -29,5 +29,13 @@ public class EntradaHDMI extends Entrada {
   //
   // Other methods
   //
+  //Erik Isaias Ortiz Duarte
+  public void execute() {
+        setEntrada();
+    }
+  //Erik Isaias Ortiz Duarte
+    private void setEntrada() {
+        System.out.println("HDMI");
+    }
 
 }
