@@ -6,8 +6,8 @@ package PResoluciones;
  */
 public class ResolucionUHD extends Resolucion {
     
-   protected final static int LARGO = 1080;
-   protected final static int ANCHO = 1920;
+   protected final static double LARGO = 1080;
+   protected final static double ANCHO = 1920;
    
    public ResolucionUHD(){
        super(LARGO,ANCHO);

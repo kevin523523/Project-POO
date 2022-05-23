@@ -10,8 +10,8 @@ public class ResolucionHD extends Resolucion {
   //
   // Fields
   //
-	protected final static int LARGO = 720;
-    protected final static int ANCHO = 1280;
+    protected final static double LARGO = 720;
+    protected final static double ANCHO = 1280;
   
   //
   // Constructors
