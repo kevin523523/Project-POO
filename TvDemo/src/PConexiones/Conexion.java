@@ -17,12 +17,18 @@ public class Conexion {
   
   //
   // Constructors
-  //
+  public ConexionWifi(String SSID, String clave, String usuario){
+      this.SSID = SSID;
+      this.clave = clave;
+      this.usuario = usuario;
+  }
   //Herrera improvement public Wifi () { };
   
   //
   // Methods
   //
+
+    
 
 
   //
