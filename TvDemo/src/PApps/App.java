@@ -35,7 +35,10 @@ public class App implements ActionListener {
         this.hacer = b;
     }
     
-    
+    App(JFrame panel) {
+        this.up = panel;
+        
+    }
   
   //
   // Methods
@@ -52,6 +55,8 @@ public class App implements ActionListener {
   //
     @Override
     public void actionPerformed(ActionEvent e) {
+	stream = new AppStreaming();
+        music = new AppMusica();
         System.out.println("Esta en la activacion de APPs");
         //System.out.println("El valor de APP en activacion: "+e.getActionCommand());
         if ("Stream".equals(e.getActionCommand())) {
