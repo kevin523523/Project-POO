@@ -43,9 +43,15 @@ public class BotonBajarVolumen extends Boton {
     public void execute() {
         bajarVolumen();
     }
-
+//@Daniel Suarez Nava
     private void bajarVolumen() {
-        this.tv.bajarVolumen();
-    }
+               
+      if (this.tv.getVolumen() > MIN_VOLUME) {
+          this.tv.bajarVolumen();
+          System.out.println("Bajar volumen = " + this.tv.getVolumen());
+        }else{
+             System.out.println("es lo maximo que se puede bajar");
+             }
+   }
 
 }
