@@ -25,9 +25,16 @@ public class AppStreaming extends App implements Acciones {
   //
     @Override
     public void abrir() {
-        System.out.println("Ejecucion de la aplicacion");
+        System.out.println("Iniciando la intefaz de la APP Streaming");
+        JFrame sot = new JFrame();
+        JButton cambio = new JButton("Fin");
         
-        
+        sot.setSize(1920,1080);
+        sot.setVisible(true);
+        sot.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        sot.setLayout(null);
+        sot.setTitle("Streaming");
+       
     }
 
     @Override
