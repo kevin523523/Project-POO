@@ -7,6 +7,7 @@ import PMain.Tv;
  */
 public abstract class Boton {
     //@daniel suarez nava
+    //Manuel Melchor Gaspar
     public int MIN_VOLUME = 0;
     public int MAX_VOLUME = 10;
     //public int volume = 6;
