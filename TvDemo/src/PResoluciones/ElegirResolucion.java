@@ -1,12 +1,14 @@
 package PResoluciones;
 
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 
 public class ElegirResolucion extends javax.swing.JFrame implements ActionListener {
@@ -14,24 +16,35 @@ public class ElegirResolucion extends javax.swing.JFrame implements ActionListen
     ArrayList<String> resoluciones;
     private final JButton[] botones;
     private final JButton btnSalir;
+    private final JLabel tittle;
     public String resolucionActual; 
 
     public ElegirResolucion() {
         initComponents();
-        this.resoluciones = PResoluciones.ResolucionDatos.leerArchivo();
+        this.resoluciones = ResolucionDatos.leerArchivo();
+        setSize(800, 700);
         botones = new JButton[resoluciones.size()];
+        tittle = new JLabel();
+        tittle.setText("Elige la resolucion");
+        tittle.setFont(new java.awt.Font("Times New Roman", 1, 20));
+        tittle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        
+        getContentPane().add(tittle);
+        getContentPane().setLayout(new GridLayout((getWidth()/100),(getWidth()/100)));
         int i;
         for (i = 0; i < resoluciones.size(); i++) {
             botones[i] = new JButton(resoluciones.get(i));
-            botones[i].setBounds(i*120+10,100,120,30);//para acomodar (requiere correcion)
-            add(botones[i]);
+            getContentPane().add(botones[i]);
             botones[i].addActionListener(this);
         }
-        btnSalir = new JButton("salir");
-        btnSalir.setBounds(i*120+10,100,120,30);
-        addWindowListener(new CierraVentana());
-        setSize(800, 700);
-        setVisible(true);
+        
+       btnSalir = new JButton("salir");
+       btnSalir.setBounds((getHeight()/2),(getWidth()/2),120,30);
+       btnSalir.addActionListener(this); 
+       getContentPane().add(btnSalir);
+       addWindowListener(new CierraVentana());
+       setLocationRelativeTo(null);
+       setVisible(true);
     }
 
     public void actionPerformed(ActionEvent e) {
