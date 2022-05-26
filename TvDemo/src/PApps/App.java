@@ -3,7 +3,14 @@ package PApps;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-
+/*
+MONTSERRAT ROJAS SANTILLAN
+para poder realizar los metodos de la interfaz en las clases abstractas, se utilizaran los metodos swing y awt 
+que nos ayudan a crear los botones que se vayan a utilizar ya sean de texto, imagen, iconos
+etc; estos nos ayudaran a crear nuevas pestañas para mostrar las operaciones de la television.
+para que el kit de herramientas awt tenga mas opciones, se pueden utilizar los eventos para facilitar los cambios 
+que se hagan dentro de las clases abstractas, estos seran accionados por medio de los botones
+*/
 
 /**
  * Class App
