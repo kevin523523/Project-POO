@@ -22,6 +22,7 @@ public class ElegirResolucion extends javax.swing.JFrame implements ActionListen
     public ElegirResolucion() {
         initComponents();
         this.resoluciones = ResolucionDatos.leerArchivo();
+        this.resolucionActual=resoluciones.get(1);
         setSize(800, 700);
         botones = new JButton[resoluciones.size()];
         tittle = new JLabel();
