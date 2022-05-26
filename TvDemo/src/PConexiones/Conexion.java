@@ -5,7 +5,7 @@ package PConexiones;
 /**
  * Class Wifi
  */
-public class Conexion {
+public class Conexion (String SSID,String clave,String usuario) {
 
   //
   // Fields
@@ -24,6 +24,7 @@ public class Conexion {
   // Methods
   //
 
+  //Luis Said
 
   //
   // Accessor methods
