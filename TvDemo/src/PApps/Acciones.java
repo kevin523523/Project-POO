@@ -35,5 +35,11 @@ public interface Acciones {
   //
     public void abrir();
     public void cerrar();
-    
+     //Jose Luis Osnaya Rosas
+    public void borrar(){
+      if (App.delete())
+   System.out.println("La app ha sido borrado satisfactoriamente");
+else
+   System.out.println("La app no puede ser borrado");  
+    }
 }
