@@ -16,13 +16,12 @@ import java.util.logging.Logger;
  *
  * @author Luis Adrian
  */
-public class VentaConexionWifi extends javax.swing.JFrame {
-   Connection con = null;
-   Statement stmt = null;
+public class ManuallyConexioni extends javax.swing.JFrame {
+
     /**
      * Creates new form VentaConexion
      */
-    public VentaConexionWifi() {
+    public ManuallyConexioni() {
         initComponents();
         this.setTitle("Agregar red");
     }
@@ -42,8 +41,7 @@ public class VentaConexionWifi extends javax.swing.JFrame {
         txt_clave = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         btn_conexion = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        txt_id = new javax.swing.JTextField();
+        JBtnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,20 +57,17 @@ public class VentaConexionWifi extends javax.swing.JFrame {
 
         jLabel3.setText("Agregar Red");
 
-        btn_conexion.setText("Conectar");
+        btn_conexion.setText("Anadir y Conectar");
         btn_conexion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_conexionActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("Id:");
-
-        txt_id.setEditable(false);
-        txt_id.setBackground(new java.awt.Color(153, 153, 153));
-        txt_id.addActionListener(new java.awt.event.ActionListener() {
+        JBtnSalir.setText("salir");
+        JBtnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_idActionPerformed(evt);
+                JBtnSalirActionPerformed(evt);
             }
         });
 
@@ -81,14 +76,9 @@ public class VentaConexionWifi extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(177, 177, 177))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btn_conexion)
-                        .addGap(153, 153, 153))))
+                .addContainerGap(162, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(177, 177, 177))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -102,25 +92,22 @@ public class VentaConexionWifi extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txt_clave, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 218, Short.MAX_VALUE)))))
                 .addGap(42, 42, 42))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_conexion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(JBtnSalir)
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(txt_Conexion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,9 +115,11 @@ public class VentaConexionWifi extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_clave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(btn_conexion)
-                .addGap(30, 30, 30))
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_conexion)
+                    .addComponent(JBtnSalir))
+                .addContainerGap())
         );
 
         pack();
@@ -143,63 +132,51 @@ public class VentaConexionWifi extends javax.swing.JFrame {
     private void btn_conexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_conexionActionPerformed
         String SSID, clave;
         SSID = txt_Conexion.getText();
-        clave = txt_clave.getText().toString();
-        
-               
-        if (txt_Conexion.getText().equals("") || (txt_clave.getText().equals("")) ) {
-            
-            javax.swing.JOptionPane.showMessageDialog(this,"Debe llenar todos los campos \n","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        clave = txt_clave.getText();
+        int flagRollback=0;
+        if (txt_Conexion.getText().equals("") || (txt_clave.getText().equals(""))) {
+
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe llenar todos los campos \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             txt_Conexion.requestFocus();
-        }
-                else {
-        try {
-           
-            String url = "jdbc:mysql://localhost:3306/TvDemo";
-            String usuario = "root";
-            String contraseña = "1234";
-            
-             Class.forName("com.mysql.jdbc.Driver").newInstance(); 
-             con = DriverManager.getConnection(url,usuario,contraseña); 
-             if ( con != null ) 
-                    System.out.println("Se ha establecido una conexión a la base de datos " +  
-                                       "\n " + url ); 
-  
-                  stmt = con.createStatement(); 
-                  stmt.executeUpdate("INSERT INTO usuarios VALUES('" + 0 + "','"+SSID+"','"+clave+"')");
-                  System.out.println("Los valores han sido agregados a la base de datos ");
-                 
-                   
-        } catch (InstantiationException ex) {
-           Logger.getLogger(VentaConexionWifi.class.getName()).log(Level.SEVERE, null, ex);
-       } catch (IllegalAccessException ex) {
-           Logger.getLogger(VentaConexionWifi.class.getName()).log(Level.SEVERE, null, ex);
-       } catch (ClassNotFoundException ex) {
-           Logger.getLogger(VentaConexionWifi.class.getName()).log(Level.SEVERE, null, ex);
-       } catch (SQLException ex) {
-           Logger.getLogger(VentaConexionWifi.class.getName()).log(Level.SEVERE, null, ex);
-       }
-        
-        finally {
-            if (con != null) {
+        } else {
+            Connection conexion = null;
+            ConexionDao conexDao = null;
+            try {
+                conexion = ConexionBaseDatos.getConnection();
+                if (conexion.getAutoCommit()) {
+                    conexion.setAutoCommit(false);
+                    conexDao = new ConexionDao(conexion);
+                    Conexion conex = new Conexion();
+                    conex.setSSID(SSID);
+                    conex.setClave(clave);
+                    conexDao.insertar(conex);
+                    conexion.commit();
+                    flagRollback=0;
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+                System.out.println("Rollback");
                 try {
-                    con.close();
-                    stmt.close();
-                } catch ( Exception e ) { 
-                         System.out.println( e.getMessage());
+                    conexion.rollback();
+                    flagRollback=1;
+                } catch (SQLException ex1) {
+                    Logger.getLogger(ManuallyConexioni.class.getName()).log(Level.SEVERE, null, ex1);
                 }
             }
-        }
-         javax.swing.JOptionPane.showMessageDialog(this,"Registro exitoso! \n","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            if(flagRollback==0)
+                javax.swing.JOptionPane.showMessageDialog(this, "Registro exitoso! \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            
+            this.dispose();
         }
         this.txt_Conexion.setText("");
-        this.txt_clave.setText("");  
+        this.txt_clave.setText("");
 
-
+        
     }//GEN-LAST:event_btn_conexionActionPerformed
 
-    private void txt_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_idActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_idActionPerformed
+    private void JBtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnSalirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_JBtnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,33 +195,34 @@ public class VentaConexionWifi extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentaConexionWifi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManuallyConexioni.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentaConexionWifi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManuallyConexioni.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentaConexionWifi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManuallyConexioni.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentaConexionWifi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ManuallyConexioni.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentaConexionWifi().setVisible(true);
+                new ManuallyConexioni().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JBtnSalir;
     private javax.swing.JButton btn_conexion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField txt_Conexion;
     private javax.swing.JPasswordField txt_clave;
-    private javax.swing.JTextField txt_id;
     // End of variables declaration//GEN-END:variables
 }
