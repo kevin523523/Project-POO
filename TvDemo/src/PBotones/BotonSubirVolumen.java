@@ -42,9 +42,17 @@ public class BotonSubirVolumen extends Boton {
     public void execute() {
         subirVolumen();
     }
-
+//Manuel Melchor Gaspar 
     private void subirVolumen() {
-        this.tv.subirVolumen();
+        if (this.tv.getVolumen() >= MAX_VOLUME) {
+            System.out.println("Es lo maximo que se puede subir ");
+        } else {
+            this.tv.subirVolumen();
+            System.out.println("Subir volumen = " + this.tv.getVolumen());
+            //this.tv.bajarVolumen(total); 
+
+        }
+
     }
 
 }
