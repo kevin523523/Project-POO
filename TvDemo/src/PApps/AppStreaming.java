@@ -55,13 +55,21 @@ los botones de las pestañas, que especificaciones tiene y los parametros que de
     @Override
     public void cerrar() {
         System.out.println("Cerrado de Aplicacion");
+        
 /*
 MONTSERRAT ROJAS SANTILLAN
 cierra la aplicacion con un mensaje una vez que se haya terminado la ejecucion y las acciones que se desearon hacer
 */       
         
     }
-
+  //Jose Luis Osnaya Rosas
+    public void borrar(){
+         if (App.delete())
+   System.out.println("La app ha sido borrado satisfactoriamente");
+else
+   System.out.println("La app no puede ser borrado");  
+    
+    }
 
   //
   // Accessor methods
