@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Luis%20Adrian/Project-POO/TvDemo/src/PConexiones/ConexionLAN.java</file>
-            <file>file:/C:/Users/Luis%20Adrian/Project-POO/TvDemo/src/PConexiones/ConexionWifi.java</file>
-            <file>file:/C:/Users/Luis%20Adrian/Project-POO/TvDemo/src/PConexiones/Conexion.java</file>
+            <file>file:/C:/Users/Windows/Desktop/POFINAL/Project-POO/TvDemo/src/PConexiones/ManuallyConexioni.java</file>
+            <file>file:/C:/Users/Windows/Desktop/POFINAL/Project-POO/TvDemo/src/PConexiones/ConexionDao.java</file>
+            <file>file:/C:/Users/Windows/Desktop/POFINAL/Project-POO/TvDemo/src/PConexiones/Conectar.java</file>
+            <file>file:/C:/Users/Windows/Desktop/POFINAL/Project-POO/TvDemo/src/PConexiones/ConexionBaseDatos.java</file>
+            <file>file:/C:/Users/Windows/Desktop/POFINAL/Project-POO/TvDemo/src/PConexiones/Conexion.java</file>
         </group>
     </open-files>
 </project-private>

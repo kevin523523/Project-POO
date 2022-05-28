@@ -1,27 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package PConexiones;
 
-import java.sql.DriverManager;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+public class ManualConexion extends javax.swing.JFrame {
 
-/**
- *
- * @author Luis Adrian
- */
-public class ManuallyConexioni extends javax.swing.JFrame {
+    public String archivoInternet = "src\\PConexiones\\internet.txt";
 
-    /**
-     * Creates new form VentaConexion
-     */
-    public ManuallyConexioni() {
+    public ManualConexion() {
         initComponents();
         this.setTitle("Agregar red");
     }
@@ -130,48 +113,32 @@ public class ManuallyConexioni extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_claveActionPerformed
 
     private void btn_conexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_conexionActionPerformed
-        String SSID, clave;
-        SSID = txt_Conexion.getText();
+        String ssid, clave;
+        Conexion conexion;
+        ssid = txt_Conexion.getText();
         clave = txt_clave.getText();
-        int flagRollback=0;
         if (txt_Conexion.getText().equals("") || (txt_clave.getText().equals(""))) {
 
             javax.swing.JOptionPane.showMessageDialog(this, "Debe llenar todos los campos \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             txt_Conexion.requestFocus();
         } else {
-            Connection conexion = null;
-            ConexionDao conexDao = null;
-            try {
-                conexion = ConexionBaseDatos.getConnection();
-                if (conexion.getAutoCommit()) {
-                    conexion.setAutoCommit(false);
-                    conexDao = new ConexionDao(conexion);
-                    Conexion conex = new Conexion();
-                    conex.setSSID(SSID);
-                    conex.setClave(clave);
-                    conexDao.insertar(conex);
-                    conexion.commit();
-                    flagRollback=0;
-                }
-            } catch (SQLException ex) {
-                ex.printStackTrace(System.out);
-                System.out.println("Rollback");
-                try {
-                    conexion.rollback();
-                    flagRollback=1;
-                } catch (SQLException ex1) {
-                    Logger.getLogger(ManuallyConexioni.class.getName()).log(Level.SEVERE, null, ex1);
-                }
+            AccesoInternetDatos AIDatos = new AccesoInternetDatos(archivoInternet);
+            if (!AIDatos.existe()) {
+                AIDatos.crear();//se crea el archivo si no existe
             }
-            if(flagRollback==0)
+            conexion = new Conexion(ssid, clave);//creamos objetos conexion
+            if (AIDatos.buscar(conexion)){
+                javax.swing.JOptionPane.showMessageDialog(this, "ya esta registrada la conexion! \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                AIDatos.escribir(conexion, true);//lo anexamos al archivo
                 javax.swing.JOptionPane.showMessageDialog(this, "Registro exitoso! \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            
+            }      
             this.dispose();
         }
         this.txt_Conexion.setText("");
         this.txt_clave.setText("");
 
-        
+
     }//GEN-LAST:event_btn_conexionActionPerformed
 
     private void JBtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnSalirActionPerformed
@@ -194,24 +161,14 @@ public class ManuallyConexioni extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ManuallyConexioni.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ManuallyConexioni.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ManuallyConexioni.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ManuallyConexioni.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ManualConexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ManuallyConexioni().setVisible(true);
+                new ManualConexion().setVisible(true);
             }
         });
     }
