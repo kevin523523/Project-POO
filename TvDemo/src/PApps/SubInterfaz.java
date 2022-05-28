@@ -16,6 +16,7 @@ pestañas con imagenes, mensajes en formato de imagenes etc
 
 /**
  * Class App
+ *Paez Moedano Alan Eduardo
  */
 public class SubInterfaz {
   /*
@@ -25,7 +26,7 @@ de metodos y los eventos del programa y lo que la ventana pueda hacer
 */
   //
   // Fields
-  //
+  //Paez Moedano Alan Eduardo
     private JFrame panel;
     private ImageIcon todo; 
     private JLayeredPane capa1;   
@@ -47,7 +48,7 @@ posiciones de los botones de la aplicacion
   
   //
   // Methods
-  //
+  //Paez Moedano Alan Eduardo
     public void InitInterfaz(){
             specsBoton();
             colocarBase();
@@ -57,7 +58,8 @@ posiciones de los botones de la aplicacion
 MONTSERRAT ROJAS SANTILLAN
 se implementa un metodo que pueda ayudar a las clases abstractas a colocar las especificaciones de los botones en las pestañas
 los colores que van a tener y su mision a cumplir
-*/    
+*/   
+  //Paez Moedano Alan Eduardo
     private void specsBoton(){
 
         for(int i=0; i<apps.length; i++){
@@ -92,7 +94,7 @@ en dado caso que los valores comiencen desde 0 entonces se hace referencia a las
 sino hara la misma accion pero con la app de musica
 se hace referencia a los botones junto con las escalas que necesita para ejecutarse de manera que muestre un mensaje y sea visible
 */  
-    
+//Paez Moedano Alan Eduardo
     private void colocarBase(){       
         
         this.capa1.setOpaque(true);
@@ -109,7 +111,7 @@ MONTSERRAT ROJAS SANTILLAN
 se colocara la base en modo privado para asignar las especificaciones y niveles de los objetos que esten dentro de la 
 capa 1 con el fin de integrar todas las instrucciones mediante un ciclo de valores
 */    
-    
+ //Paez Moedano Alan Eduardo  
     private void accion(){
         App sut = new App();
         //App.Responder deton = new App.Responder();
@@ -128,7 +130,7 @@ tome el valor apto para realizar una tarea de cualquier metodo
 
   //
   // Accessor methods
-  //
+  //Paez Moedano Alan Eduardo
     
     public JLayeredPane getCapa1() {
         return capa1;
