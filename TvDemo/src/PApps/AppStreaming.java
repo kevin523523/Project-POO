@@ -31,7 +31,7 @@ se crea una clase para la aplicacion de la transmision con las extensiones de la
   
   //
   // Methods
-  //
+  // Paez Moedano Alan Eduardo 
     @Override
     public void abrir() {
         System.out.println("Iniciando la intefaz de la APP Streaming");
@@ -51,7 +51,7 @@ MONTSERRAT ROJAS SANTILLAN
 se implementara el metodo para abrir las interfaces de las aplicaciones de transmision y musica para asignar cambios en 
 los botones de las pestañas, que especificaciones tiene y los parametros que debera cubrir la pestaña
 */
-
+//Paez Moedano Alan Eduardo
     @Override
     public void cerrar() {
         System.out.println("Cerrado de Aplicacion");
