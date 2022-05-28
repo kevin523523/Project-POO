@@ -97,7 +97,7 @@ se hace referencia a los botones junto con las escalas que necesita para ejecuta
         
         this.capa1.setOpaque(true);
         this.capa1.setBackground(Color.CYAN);
-        this.capa1.setBounds(0,840,400,200);
+        this.capa1.setBounds(0,360,400,200);
         
         for(int a=0; a< apps.length; a++ ){
             this.capa1.add(app[a],Integer.valueOf(2));
