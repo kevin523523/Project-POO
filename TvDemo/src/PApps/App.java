@@ -18,6 +18,7 @@ que se hagan dentro de las clases abstractas, estos seran accionados por medio d
 
 /**
  * Class App
+ * Paez Moedano Alan Eduardo
  */
 public class App implements ActionListener {
     AppStreaming stream;
@@ -39,7 +40,7 @@ de audio o musica, las imagenes/iconos para el menu, el volumen, los canales y l
   //
   // Constructors
   //
-  //
+  // Paez Moedano Alan Eduardo
     public App(){
     }
     
@@ -64,7 +65,7 @@ MONTSERRAT ROJAS SANTILLAN
 se hace el llamado de la clase app en la cual se ejecutan las acciones de la musica y las que por medio de metodos 
 denominados como c y d se hace referencia a los objetos agreando de el uso de la app de musica y que va a reproducir.
 */
-    
+//Paez Moedano Alan Eduardo 
     public App(JFrame panel) {
         this.up = panel;
         
@@ -87,7 +88,7 @@ generamos un nuevo panel para llamar a una nueva ventana que muestre las aplicac
 
   //
   // Other methods
-  //
+  //Paez Moedano Alan Eduardo
     @Override
     public void actionPerformed(ActionEvent e) {
 	stream = new AppStreaming();
