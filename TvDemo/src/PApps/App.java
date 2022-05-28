@@ -6,7 +6,7 @@ paquete de la aplicacion de transmision y musica
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
+
 /*
 MONTSERRAT ROJAS SANTILLAN
 para poder realizar los metodos de la interfaz en las clases abstractas, se utilizaran los metodos swing y awt 
@@ -23,6 +23,7 @@ public class App implements ActionListener {
     AppStreaming stream;
     AppMusica music;
     Acciones hacer;
+    JFrame up;
   //
   // Fields
   //
@@ -64,7 +65,7 @@ se hace el llamado de la clase app en la cual se ejecutan las acciones de la mus
 denominados como c y d se hace referencia a los objetos agreando de el uso de la app de musica y que va a reproducir.
 */
     
-    App(JFrame panel) {
+    public App(JFrame panel) {
         this.up = panel;
         
     }
@@ -92,14 +93,16 @@ generamos un nuevo panel para llamar a una nueva ventana que muestre las aplicac
 	stream = new AppStreaming();
         music = new AppMusica();
         System.out.println("Esta en la activacion de APPs");
-        //System.out.println("El valor de APP en activacion: "+e.getActionCommand());
+       
         if ("Stream".equals(e.getActionCommand())) {
             
             System.out.println("Activo la App Stream");
+	    up.dispose();
             stream.abrir();
             
         }else if ("Musica".equals(e.getActionCommand())) {
-            music.abrir();
+            up.dispose();
+	    music.abrir();
             System.out.println("Activo la App Musica");
 	
         }
