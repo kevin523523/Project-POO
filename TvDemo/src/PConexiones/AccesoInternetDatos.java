@@ -14,9 +14,8 @@ import java.util.logging.Logger;
 
 public class AccesoInternetDatos {
     
-    String nombreArchivo;
-    public AccesoInternetDatos(String na){
-        this.nombreArchivo = na;
+    String nombreArchivo="src\\PConexiones\\internet.txt";
+    public AccesoInternetDatos(){
     }
 
     public boolean existe() {

@@ -2,8 +2,6 @@ package PConexiones;
 
 public class ManualConexion extends javax.swing.JFrame {
 
-    public String archivoInternet = "src\\PConexiones\\internet.txt";
-
     public ManualConexion() {
         initComponents();
         this.setTitle("Agregar red");
@@ -122,7 +120,7 @@ public class ManualConexion extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Debe llenar todos los campos \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
             txt_Conexion.requestFocus();
         } else {
-            AccesoInternetDatos AIDatos = new AccesoInternetDatos(archivoInternet);
+            AccesoInternetDatos AIDatos = new AccesoInternetDatos();
             if (!AIDatos.existe()) {
                 AIDatos.crear();//se crea el archivo si no existe
             }
