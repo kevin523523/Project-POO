@@ -49,7 +49,7 @@ public class AccesoInternetDatos {
         PrintWriter salida;
         try {
             salida = new PrintWriter(new FileWriter(archivo, anexar));
-            salida.println(conexion.getSSID() + " " + conexion.getClave());
+            salida.println(conexion.getSSID() + " " + conexion.getClave() );
             salida.close();
             System.out.println("Se ha escrito el archivo");
         } catch (IOException ex) {

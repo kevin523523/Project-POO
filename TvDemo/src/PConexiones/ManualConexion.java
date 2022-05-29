@@ -130,7 +130,8 @@ public class ManualConexion extends javax.swing.JFrame {
             }else{
                 AIDatos.escribir(conexion, true);//lo anexamos al archivo
                 javax.swing.JOptionPane.showMessageDialog(this, "Registro exitoso! \n", "AVISO!", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-            }      
+            }     
+            
             this.dispose();
         }
         this.txt_Conexion.setText("");
@@ -141,6 +142,7 @@ public class ManualConexion extends javax.swing.JFrame {
 
     private void JBtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBtnSalirActionPerformed
         this.dispose();
+        
     }//GEN-LAST:event_JBtnSalirActionPerformed
 
     /**
