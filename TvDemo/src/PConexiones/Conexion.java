@@ -15,14 +15,38 @@ public class Conexion {
   
   //
   // Constructors
-  //
+  public Conexion(){
+  }
+  public Conexion(String SSID, String clave, String usuario){
+      this.SSID = SSID;
+      this.clave = clave;
+      this.usuario = usuario;
+  }
+    public Conexion(String SSID, String clave){
+      this.SSID = SSID;
+      this.clave = clave;
+  }
   //Herrera improvement public Wifi () { };
   
   //
   // Methods
   //
 
+<<<<<<< HEAD
+    
+
+
+  //
+  // Accessor methods
+  //
+
+  /**
+   * Fija el valor de SSID
+   * @param newVar el nuevo valor de SSID
+   */
+=======
   //Luis Said
+>>>>>>> master
   public void setSSID ( String newVar ) {
     SSID = newVar;
     System.out.println("La SSID");

@@ -21,6 +21,9 @@ public class ConexionLAN extends Conexion{
   
   //
   // Constructors
+     public ConexionLAN(String SSID, String clave, String usuario){
+   super(SSID,clave,usuario);     
+};
   //
   //Herrera improvement public Wifi () { };
   
