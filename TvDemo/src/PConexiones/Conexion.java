@@ -7,9 +7,7 @@ package PConexiones;
  */
 public class Conexion {
 
-  //
-  // Fields
-  //
+    
 
   private String SSID;
   private String clave;
@@ -34,6 +32,7 @@ public class Conexion {
   // Methods
   //
 
+<<<<<<< HEAD
     
 
 
@@ -45,8 +44,12 @@ public class Conexion {
    * Fija el valor de SSID
    * @param newVar el nuevo valor de SSID
    */
+=======
+  //Luis Said
+>>>>>>> master
   public void setSSID ( String newVar ) {
     SSID = newVar;
+    System.out.println("La SSID");
   }
 
   /**
@@ -63,6 +66,7 @@ public class Conexion {
    */
   public void setClave ( String newVar ) {
     clave = newVar;
+      System.out.println("La clave es");
   }
 
   /**
@@ -79,6 +83,7 @@ public class Conexion {
    */
   public void setUsuario ( String newVar ) {
     usuario = newVar;
+      System.out.println("Es tu usuario ");
   }
 
   /**
@@ -92,5 +97,6 @@ public class Conexion {
   //
   // Other methods
   //
+  
 
 }
