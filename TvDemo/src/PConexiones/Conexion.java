@@ -31,8 +31,6 @@ public class Conexion {
   //
   // Methods
   //
-
-<<<<<<< HEAD
     
 
 
@@ -44,9 +42,6 @@ public class Conexion {
    * Fija el valor de SSID
    * @param newVar el nuevo valor de SSID
    */
-=======
-  //Luis Said
->>>>>>> master
   public void setSSID ( String newVar ) {
     SSID = newVar;
     System.out.println("La SSID");
