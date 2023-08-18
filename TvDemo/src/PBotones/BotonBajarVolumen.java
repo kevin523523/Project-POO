@@ -1,57 +1,26 @@
 package PBotones;
 
 import PMain.Tv;
+import PSonido.Volumen;
 
 
 
 /**
  * Class BotonBajarVolumen
  */
-public class BotonBajarVolumen extends Boton {
-
-  //
-  // Fields
-  //
-
-  
+public class BotonBajarVolumen implements Boton {
   //
   // Constructors
-  //
-  //Herrera improvement 
-    public BotonBajarVolumen () {
-        super();
-    };
-    public BotonBajarVolumen (Tv tv) { 
-        super(tv);
-    };
-    
-  
-  //
-  // Methods
-  //
-
-
-  //
-  // Accessor methods
-  //
-
-  //
-  // Other methods
-  //
+    private Tv tv;
+    private Volumen volumen;
+    public BotonBajarVolumen(Tv tv) {
+        this.tv = tv;
+    }
 
     @Override
-    public void execute() {
-        bajarVolumen();
+    public void presionar() {
+        volumen = new Volumen(10);
+        volumen.bajar();
     }
-//@Daniel Suarez Nava
-    private void bajarVolumen() {
-               
-      if (this.tv.getVolumen() > MIN_VOLUME) {
-          this.tv.bajarVolumen();
-          System.out.println("Bajar volumen = " + this.tv.getVolumen());
-        }else{
-             System.out.println("es lo maximo que se puede bajar");
-             }
-   }
 
 }
